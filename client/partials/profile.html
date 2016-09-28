@@ -1,1 +1,54 @@
+
 <h1>{{title}}</h1>
+
+<div class="row">
+  <div class="col s4">
+    <div>{{user.info.name}}</div>
+  </div>
+  <div class="col s4">
+    <div>{{user.info.email}}</div>
+  </div>
+  <div class="col s4">
+    <div>{{user.info.genPref}}</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s4">
+    <div class="row">
+      <img class="responsive-img" src="{{user.info.picture}}" alt="AWWWW YEAH" />
+    </div>
+    <div class="row">
+      {{user.info.gender}}
+    </div>
+  </div>
+  <div class="col s8">
+    <h3>About:</h3>
+    <p>{{user.info.about}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <h3>Interests:</h3>
+  <ul>
+    <li ng-repeat="interest in user.info.interests">
+      {{interest}}
+    </li>
+  </ul>
+</div>
+
+<div class="row">
+  <div ng-repeat="match in user.info.matches">
+    <!-- Add link to match profile -->
+    <a href="/profile/:{{match.id}}">
+      <div class="col s4">
+        <div class="card test">
+          <div class="card-image">
+            <img class="responsive-img" src="{{match.picture}}">
+            <span class="card-content">{{match.name}}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
