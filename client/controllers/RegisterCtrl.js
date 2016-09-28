@@ -1,6 +1,6 @@
 'use strict'
 
-app.controller('RegisterCtrl', function($scope, $http){
+app.controller('RegisterCtrl', function($scope, $http, $location){
 	$scope.title = "Carbon Dating"
 	$scope.register = () => {
 		const userModel = {
@@ -18,6 +18,9 @@ app.controller('RegisterCtrl', function($scope, $http){
 			}
 		}
 
-		$http.post('/api/user')
+		$http.post('/api/register', userModel)
+			.then(() => {
+				$location.redirect('/login')
+			})
 	}
 })
