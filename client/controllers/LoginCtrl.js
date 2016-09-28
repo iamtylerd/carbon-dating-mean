@@ -11,9 +11,10 @@ app.controller('LoginCtrl', function($scope, $http, $location){
 
 		$http.post('/api/login', user)
 			.then((userObj) => {
+				console.log(userObj)
 				$scope.user = userObj
 				console.log($scope.user);
-				$location.redirect('/profile')
+				$location.path('/profile')
 			})
 	}
 
