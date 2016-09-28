@@ -4,11 +4,11 @@
     <form class="col s12" ng-submit="login()">
     <div class="row">
         <div class="input-field col s6">
-          <input placeholder="User Name" id="username" type="text" class="validate">
+          <input placeholder="User Name" id="username" type="text" class="validate" ng-model="userName">
           <label for="username">User Name</label>
         </div>
         <div class="input-field col s6">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="password" class="validate" ng-model="password">
           <label for="password">Password</label>
         </div>
         <button type="submit" class="btn">Login</button>
