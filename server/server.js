@@ -1,9 +1,13 @@
 'use strict'
 
 const express = require('express')
+const session = require('express-session')
+const RedisStore = require('connect-redis')(session)
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 const routes = require('../server/routes/')
 const { json } = require('body-parser')
+//const { connect } = require('./db/database')
 const app = express()
 
 

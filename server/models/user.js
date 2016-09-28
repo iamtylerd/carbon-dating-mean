@@ -6,7 +6,7 @@ module.exports = mongoose.model('User', {
 	username: String,
 	password: String,
 	info: {
-		id: String,
+		customId: String,
 		name: String,
 		matches: [String],		
 		seen: [String],
