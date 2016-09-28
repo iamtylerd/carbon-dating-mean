@@ -7,20 +7,20 @@ app.controller('RegisterCtrl', function($scope, $http, $location){
 			userName: $scope.userName,
 			password: $scope.password,
 			info: {
-				id: Date.now(),
+				customId: Date.now().toString(),
 				name: $scope.name,
 				interests: $scope.interests,
 				about: $scope.about,
 				email: $scope.email,
 				gender: $scope.gender,
 				genPref: $scope.genPref,
-				picture: $scope.picture
+				// picture: $scope.picture
 			}
 		}
-
+		console.log(userModel)
 		$http.post('/api/register', userModel)
 			.then(() => {
-				$location.redirect('/login')
+				$location.path('/login')
 			})
 	}
 })

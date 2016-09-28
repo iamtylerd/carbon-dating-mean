@@ -3,18 +3,17 @@
 const mongoose = require('mongoose')
 
 module.exports = mongoose.model('User', {
-	username: String,
+	userName: String,
 	password: String,
 	info: {
-		customId: Number,
+		customId: String,
 		name: String,
-		matches: [String],		
+		matches: [{type: String}],		
 		seen: [String],
-		interests: [String],
+		interests: {0: String, 1: String, 2: String},
 		about: String,
 		email: String,
 		gender: String,		
 		genPref: String,
-		picture: String
 	}	
 })

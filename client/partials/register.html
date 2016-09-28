@@ -44,12 +44,12 @@
     </div>
     <div class="row">
     	<div class="input-field col s6"> Interests:
-    		<input type="text" name="interests">
-    		<input type="text" name="interests">
-    		<input type="text" name="interests">
+    		<input type="text" name="interests" ng-model="interests[0]">
+    		<input type="text" name="interests" ng-model="interests[1]">
+    		<input type="text" name="interests" ng-model="interests[2]">
     	</div>
     	<div class="input-field col s6"> About:
-    		<textarea class="materialize-textarea" type="text" name="about"></textarea>
+    		<textarea ng-model="about" class="materialize-textarea" type="text" name="about"></textarea>
     	</div>
     </div>
     <button type="submit" class="btn">Login</button>
