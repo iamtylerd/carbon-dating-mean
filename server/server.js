@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 // app.use(json())
 
 // routes
-//app.use(routes)
+app.use(routes)
 
 //Listen
 connect()
