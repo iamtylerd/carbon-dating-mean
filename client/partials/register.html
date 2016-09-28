@@ -1,1 +1,64 @@
 <h1>{{title}}</h1>
+
+<div class="row">
+  <form class="col s12" ng-submit="register()">
+ 		<div class="row">
+      <div class="input-field col s6">
+        <input id="name" name="username" type="text" class="validate" ng-model="userName">
+        <label for="username">User Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="password" name="password" type="password" class="validate" ng-model="password">
+        <label for="password">Password</label>
+      </div>
+    </div>
+ 		<div class="row">
+      <div class="input-field col s6">
+        <input id="name" name="name" type="text" class="validate" ng-model="name">
+        <label for="name">Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="email"  name="email" type="email" class="validate" ng-model="email">
+        <label for="email">Email</label>
+      </div>
+    </div>
+ 		<div class="row">
+      <div class="input-field col s6">
+        <select id="gender" name="gender" ng-model="gender">
+        	<option value="" disabled selected>Choose Option</option>
+        	<option value="male">Male</option>
+        	<option value="female">Female</option>
+        	<option value="other">Prefer not to say</option>
+        </select>
+        <label for="gender">Gender</label>
+      </div>
+      <div class="input-field col s6">
+        <select id="genPref" name="genPref" ng-model="genPref">
+        	<option value="" disabled selected>Choose Option</option>
+        	<option value="male">Male</option>
+        	<option value="female">Female</option>
+        	<option value="other">I'm not picky</option>
+        </select>
+        <label for="genPref">Gender Preference</label>
+      </div>
+    </div>
+    <div class="row">
+    	<div class="input-field col s6"> Interests:
+    		<input type="text" name="interests">
+    		<input type="text" name="interests">
+    		<input type="text" name="interests">
+    	</div>
+    	<div class="input-field col s6"> About:
+    		<textarea class="materialize-textarea" type="text" name="about"></textarea>
+    	</div>
+    </div>
+    <button type="submit" class="btn">Login</button>
+  </form>
+</div>
+
+<script>
+     $(document).ready(function() {
+        $('select').material_select();
+    });
+  </script>
+
