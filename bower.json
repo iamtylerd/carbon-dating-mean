@@ -1,0 +1,23 @@
+{
+  "name": "carbon-dating",
+  "description": "",
+  "main": "server/server.js",
+  "authors": [
+    "iamtylerd <tylerdanielphotography@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/iamtylerd/carbon-dating-mean",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib",
+    "test",
+    "tests"
+  ],
+   "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "materialize": "^0.97.7"
+  }
+}
