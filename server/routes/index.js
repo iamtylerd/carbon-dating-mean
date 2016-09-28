@@ -5,4 +5,4 @@ const router = Router()
 
 router.use(require('./loginRoute'))
 
-module.export = router
+module.exports = router

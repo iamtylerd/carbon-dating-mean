@@ -4,7 +4,7 @@ const express = require('express')
 const session = require('express-session')
 const RedisStore = require('connect-redis')(session)
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 const routes = require('../server/routes/')
 const bodyParser = require('body-parser')
 const { connect } = require('./database/database')
@@ -26,11 +26,11 @@ app.use((req, res, next) => {
 })
 app.use(bodyParser.urlencoded({extended: false}))
 
-// app.use(express.static('client'))
+app.use(express.static('client'))
 // app.use(json())
 
 // routes
-//app.use(routes)
+app.use(routes)
 
 //Listen
 connect()
