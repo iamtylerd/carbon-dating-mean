@@ -1,1 +1,33 @@
-<h1>{{title}}</h1>
+<div class="row">
+  <div class="col s4"></div>
+  <div class="col s4">
+    <h1>{{match.info.name}}</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s3">
+    <a class="waves-effect waves-light btn-large">HOT  <img src="./img/fire.png" /></a>
+  </div>
+  <div class="col s6">
+    <img src="{{match.info.picture}}" />
+  </div>
+  <div class="col s3">
+    <a class="waves-effect waves-light btn-large red">NOT  <img src="./img/not.png" /></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s8">
+    <h4>About:</h4>
+    <p>
+      {{match.info.about}}
+    </p>
+  </div>
+  <div class="col s4">
+    <h4>Interests:</h4>
+      <ul>
+        <ling-repeat="interest in match.info.interests">{{interest}}</li>
+      </ul>
+  </div>
+</div>
