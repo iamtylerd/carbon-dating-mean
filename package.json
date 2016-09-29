@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Dating Application Group Project featuring: Tyler Daniel(Team Lead), Alex Craven, and Daniel Chapdelaine on Front End, and Vaughn Walters, Brian Doane, and Eric Denton on Back End.",
   "main": "server/server.js",
+  "engines": {
+    "node": "6"
+  },
   "scripts": {
     "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
