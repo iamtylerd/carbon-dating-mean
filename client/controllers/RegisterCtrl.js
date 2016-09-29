@@ -14,13 +14,13 @@ app.controller('RegisterCtrl', function($scope, $http, $location){
 				email: $scope.email,
 				gender: $scope.gender,
 				genPref: $scope.genPref,
-				// picture: $scope.picture
+				picture: $scope.picture
 			}
 		}
 		console.log(userModel)
 		$http.post('/api/register', userModel)
 			.then(() => {
-				$location.path('/login')
+				$location.path('/')
 			})
 	}
 })
