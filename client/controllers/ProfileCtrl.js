@@ -6,7 +6,7 @@ app.controller('ProfileCtrl', function($scope, $http, $location){
 		name: 'Matches'
 	}
 	$scope.logout = () => {
-		$http.get('/api/logout')
+		$http.post('/api/logout')
 			.then(() => $location.path('/'))
 	}
 	$http.get('/api/profile')

@@ -6,7 +6,7 @@ app.controller('MatchCtrl', function($scope, $http, $location){
 		name: 'Profile'
 	}
 	$scope.logout = () => {
-		$http.get('/api/logout')
+		$http.post('/api/logout')
 			.then(() => $location.path('/'))
 	}
 	//test data
