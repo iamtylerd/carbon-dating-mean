@@ -8,7 +8,6 @@ module.exports.userLogin = (req, res, err) => {
       if (user) {
         if (user.password === req.body.password) {
           req.session.user = user
-          console.log("LOGIN REQ", req);
           res.json(user)
         } else {
           console.log("passwords didn't match")
