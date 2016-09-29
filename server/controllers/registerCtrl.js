@@ -22,7 +22,9 @@ module.exports.userRegister = (req, res, err) => {
             picture: req.body.info.picture
           }
         })
-          .then(() => res.redirect('/'))
+          .then(() => {
+            // User.picture
+            res.redirect('/')})
           .catch(err)  
       }
     }
