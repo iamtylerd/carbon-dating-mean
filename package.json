@@ -1,7 +1,7 @@
 {
   "name": "carbon-dating",
   "version": "1.0.0",
-  "description": "",
+  "description": "Dating Application Group Project featuring: Tyler Daniel(Team Lead), Alex Craven, and Daniel Chapdelaine on Front End, and Vaughn Walters, Brian Doane, and Eric Denton on Back End.",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
