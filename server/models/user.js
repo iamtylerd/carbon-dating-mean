@@ -15,5 +15,6 @@ module.exports = mongoose.model('User', {
 		email: String,
 		gender: String,		
 		genPref: String,
+		picture: String,
 	}	
 })
