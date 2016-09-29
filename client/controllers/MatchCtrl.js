@@ -1,7 +1,31 @@
 'use strict'
 
-app.controller('MatchCtrl', function($scope, $http){
+app.controller('MatchCtrl', function($scope, $http, $location){
 	$scope.title = "match"
+	$scope.selected = () => {
+		let matched = {
+			id: match.info.id,
+			name: match.info.name,
+			picture: match.info.picture
+		}
+		let userInfo = user.info
+		console.log('before selected', userInfo);
+		userInfo.seen.push(match.info.id)
+		userInfo.matches.push(matched)
+		console.log('after selected', userInfo);
+		// $http.patch(`/api/user:${userInfo.id}`)
+		$location.path('/match')
+	}
+	$scope.rejected = () => {
+		let userInfo = user.info
+		console.log('before rejected', userInfo);
+		userInfo.seen.push(match.info.id)
+		console.log('after rejected', userInfo);
+		// $http.patch(`/api/user:${userInfo.id}`)
+		$location.path('/match')
+	}
+
+	//test data
 	$scope.match = {
 		userName: "testUsername",
 		password: "12345678",
@@ -14,6 +38,7 @@ app.controller('MatchCtrl', function($scope, $http){
 			genPref: "female",
 			picture: "http://www.vipcutouts.com/media/com_hikashop/upload/thumbnails/600x760f/don-cheadle-celebrity-mask.jpg",
 			interests: ["Dogs", "Gambling", "Don Cheadle"],
+			seen: [],
 			matches: [
 				{
 					name: "Tina Turner",
@@ -33,4 +58,5 @@ app.controller('MatchCtrl', function($scope, $http){
 			]
 		}
 	}
+	//end test data
 })
