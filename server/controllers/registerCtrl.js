@@ -8,7 +8,6 @@ module.exports.userRegister = (req, res, err) => {
       if (userObj) {
         console.log("EXISTZ")
       } else {
-        console.log(userObj)
         User.create({
           userName: req.body.userName,
           password: req.body.password,
@@ -19,7 +18,7 @@ module.exports.userRegister = (req, res, err) => {
             about: req.body.info.about,
             email: req.body.info.email,
             gender: req.body.info.gender,
-            genPref: req.body.info.about,
+            genPref: req.body.info.genPref,
             picture: req.body.info.picture
           }
         })
