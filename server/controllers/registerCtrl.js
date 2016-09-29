@@ -19,7 +19,8 @@ module.exports.userRegister = (req, res, err) => {
             about: req.body.info.about,
             email: req.body.info.email,
             gender: req.body.info.gender,
-            genPref: req.body.info.about
+            genPref: req.body.info.about,
+            picture: req.body.info.picture
           }
         })
           .then(() => res.redirect('/'))
