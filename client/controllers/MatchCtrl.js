@@ -1,7 +1,14 @@
 'use strict'
 
 app.controller('MatchCtrl', function($scope, $http, $location){
-	$scope.title = "match"
+	$scope.destination = {
+		loc: "/#/profile",
+		name: 'Profile'
+	}
+	$scope.logout = () => {
+		$http.get('/api/logout')
+			.then(() => $location.path('/'))
+	}
 	//test data
 	$scope.match = {
 		userName: "testUsername",
