@@ -14,16 +14,20 @@ const app = express()
 const port = process.env.PORT || 3000;
 app.set('port', port)
 
-// Middlewares
-// app.use(session({
-// 	store: new RedisStore(),
-// 	secret: 'carbondatemenow'
-// }))
 
-// app.use((req, res, next) => {
-// 	app.locals.username = req.session && req.session.username
-// 	next()
-// })
+// Middlewares
+app.use(session({
+	store: new RedisStore({
+    url: process.env.REDIS_URL || "redis://localhost:6379"
+  }),
+	secret: 'carbondatemenow'
+}))
+
+app.use((req, res, next) => {
+	app.locals.username = req.session && req.session.username
+	next()
+})
+
 
 app.use(express.static('client'))
 app.use(json())
