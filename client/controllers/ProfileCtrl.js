@@ -1,7 +1,10 @@
 'use strict'
 
 app.controller('ProfileCtrl', function($scope, $http){
-	$scope.title = "profile"
+	$scope.destination = {
+		loc: "/#/match",
+		name: 'Matches'
+	}
 	$http.get('/api/profile')
 		.then((userObj) => {
 			console.log(userObj)

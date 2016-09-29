@@ -1,7 +1,10 @@
 'use strict'
 
 app.controller('MatchCtrl', function($scope, $http, $location){
-	$scope.title = "match"
+	$scope.destination = {
+		loc: "/#/profile",
+		name: 'Profile'
+	}
 	//test data
 	$scope.match = {
 		userName: "testUsername",

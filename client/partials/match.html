@@ -1,32 +1,36 @@
-<div class="row">
-  <div class="center">
-    <h3>{{match.info.name}}</h3>
-  </div>
-</div>
+<div ng-include src="'partials/navbar.html'"></div>
 
-<div class="row">
-  <div class="col s3">
-    <a class="waves-effect waves-light btn-large" ng-click='selected()'>HOT  <img src="./img/fire.png" /></a>
+<div class="container">
+  <div class="row">
+    <div class="center">
+      <h3>{{match.info.name}}</h3>
+    </div>
   </div>
-  <div class="col s6">
-    <img class="responsive-img" src="{{match.info.picture}}" />
-  </div>
-  <div class="col s3">
-    <a class="waves-effect waves-light btn-large red" ng-click='rejected()'>NOT  <img src="./img/not.png" /></a>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col s8">
-    <h4>About:</h4>
-    <p>
-      {{match.info.about}}
-    </p>
+  <div class="row">
+    <div class="col s3">
+      <a class="waves-effect waves-light btn-large" ng-click='selected()'>HOT  <img src="./img/fire.png" /></a>
+    </div>
+    <div class="col s6">
+      <img class="responsive-img" src="{{match.info.picture}}" />
+    </div>
+    <div class="col s3">
+      <a class="waves-effect waves-light btn-large red" ng-click='rejected()'>NOT  <img src="./img/not.png" /></a>
+    </div>
   </div>
-  <div class="col s4">
-    <h4>Interests:</h4>
-      <ul>
-        <li ng-repeat="interest in match.info.interests">{{interest}}</li>
-      </ul>
+
+  <div class="row">
+    <div class="col s8">
+      <h4>About:</h4>
+      <p>
+        {{match.info.about}}
+      </p>
+    </div>
+    <div class="col s4">
+      <h4>Interests:</h4>
+        <ul>
+          <li ng-repeat="interest in match.info.interests">{{interest}}</li>
+        </ul>
+    </div>
   </div>
 </div>
