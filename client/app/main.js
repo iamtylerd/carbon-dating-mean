@@ -2,7 +2,8 @@
 
  const app = angular.module('app', ['ngRoute'])
 
- app.config($routeProvider => {
+ app.config(($routeProvider, $locationProvider) => {
+  $locationProvider.html5Mode(true)
  	$routeProvider
  		.when('/', {
  			controller: 'LoginCtrl',
