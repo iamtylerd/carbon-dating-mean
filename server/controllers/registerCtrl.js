@@ -19,11 +19,11 @@ module.exports.userRegister = (req, res, err) => {
             email: req.body.info.email,
             gender: req.body.info.gender,
             genPref: req.body.info.genPref,
-            picture: req.body.info.picture
+            picture: req.body.info.picture,
+            seen: req.body.info.customId
           }
         })
           .then(() => {
-            // User.picture
             res.redirect('/')})
           .catch(err)  
       }
