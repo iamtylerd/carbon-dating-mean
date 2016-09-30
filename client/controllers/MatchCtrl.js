@@ -16,9 +16,8 @@ app.controller('MatchCtrl', function($scope, $http, $location){
 	$scope.getMatch = () => {
 		console.log('http call');
 		$http.get('/api/matches')
-			.then((res) => {
-				console.log(res);
-				$scope.match = res
+			.then((match) => {
+				$scope.match = match.data
 			})
 	}
 	$scope.getMatch()
