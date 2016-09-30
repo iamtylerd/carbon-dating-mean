@@ -19,7 +19,9 @@ module.exports.getMatches = (req, res, err) => {
   .where('info.gender').equals(genPref)
   .where('info.genPref').in([gender, 'other'])
   .where('info.customId').nin(idArray)
- 	.then((users) => {
- 		console.log("users", users);
+ 	.then((matches) => {
+    let randomNumber = Math.floor(Math.floor(Math.random() * (matches.length - 1 + 1)))
+ 		let randomMatch = matches[randomNumber]
+    res.json(randomMatch)
  	})
 }
