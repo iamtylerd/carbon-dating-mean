@@ -4,6 +4,7 @@
 
  app.config(($routeProvider, $locationProvider) => {
   $locationProvider.html5Mode(true)
+  $locationProvider.hashPrefix = '/'
  	$routeProvider
  		.when('/', {
  			controller: 'LoginCtrl',
