@@ -5,5 +5,5 @@ const User = require('../models/user')
 module.exports.getMatches = (req, res, err) => {
   User
     .find()
-    .then((users) => res.json(users))
+    .then((users) => console.log("~~~~users", users))
 }
