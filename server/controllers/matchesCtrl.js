@@ -3,20 +3,23 @@
 const User = require('../models/user')
 
 module.exports.getMatches = (req, res, err) => {
-	// let magicNumber = Math.floor((Math.random() * 3) + 1)
-	// console.log("magicNumber", magicNumber);
- //  User
- //    .find().limit(-1).skip(3)
- //    .then((users) => console.log("~~~~users", users))
- let idArray = req.session.user.info.seen
- console.log("req.session.user.info.seen", req.session.user.info.seen);
- User
- 	.find({'info.customId' : 
-			{ $nin: idArray
-			}
-	})
- 	.then((users) => {
- 		console.log("users", users );
+  let idArray = req.session.user.info.seen
+  let genPref;
+  let gender = req.session.user.info.gender
+  if (req.session.user.info.genPref === 'male') {
+    genPref = 'male'
+  } else if (req.session.user.info.genPref === 'female') {
+    genPref = 'female'
+  } else {
+    genPref = { $in: ['male', 'female'] }
+  }
 
+
+ User
+  .where('info.customId').nin(idArray)
+  .where('info.gender').equals(genPref)
+  .where('info.genPref').equals(gender)
+ 	.then((users) => {
+ 		console.log("users", users);
  	})
 }
