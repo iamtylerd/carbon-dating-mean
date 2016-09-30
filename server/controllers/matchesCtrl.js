@@ -16,9 +16,9 @@ module.exports.getMatches = (req, res, err) => {
 
 
  User
-  .where('info.customId').nin(idArray)
   .where('info.gender').equals(genPref)
-  .where('info.genPref').equals(gender)
+  .where('info.genPref').in([gender, 'other'])
+  .where('info.customId').nin(idArray)
  	.then((users) => {
  		console.log("users", users);
  	})

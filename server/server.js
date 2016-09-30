@@ -33,7 +33,11 @@ app.use(express.static('client'))
 app.use(json())
 
 // routes
-app.use(routes)
+app.use('/api', routes)
+// refresh with html5 routing
+app.use((req, res) =>
+  res.sendFile(process.cwd() + '/client/index.html')
+)
 
 //Listen
 connect()
